@@ -9,5 +9,12 @@ fn main() {
     let spaces = "    "; // was as string, I think?
     let spaces = spaces.len(); // became an int
     println!("value of spaces is {}", spaces);
+
+    let c = 'z';
+    let z = 'ℤ';
+    let heart_eyed_cat = '😻';
+    println!("{}, {}, {}",c, z, heart_eyed_cat);
+
+
 }
 
