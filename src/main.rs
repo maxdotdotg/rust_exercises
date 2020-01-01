@@ -18,7 +18,8 @@ fn main() {
     // tuples are fixed length, can't be modified
     // type annotation below for reference, it's not required
     let tup: (i32, f64, u8) = (500, 6.4, 1);
-    let (x,y,z) = tup;
+    let (x,y,z) = tup; // destructuring the tuple to access individual values
+    println!("index test: tup index 0 is accessed with dots, so tup.0: {}", tup.0);
 
     // this doesn't work with the default formater
     // println!("{}", tup);
