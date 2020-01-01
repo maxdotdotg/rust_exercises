@@ -26,5 +26,11 @@ fn main() {
     println!("pretty print of tup: {:#?}", tup); // this is pretty-print for debugging
     println!("tup is {:?}", tup); // this is print for debugging
     println!("the vlaue of y is {}", y);
+
+    // it's arrays, not lists
+    
+    let months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+    println!("testing indexing: months[2] is: {}", months[2]);
 }
 
