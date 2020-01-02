@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 fn main() {
     let x = 5; 
     let x = x + 1; // x is shadowed, which means value of x is now 6
@@ -32,5 +34,14 @@ fn main() {
     let months = ["January", "February", "March", "April", "May", "June", "July",
               "August", "September", "October", "November", "December"];
     println!("testing indexing: months[2] is: {}", months[2]);
+
+    // with type declaration, size is required?
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+    // array shorthand
+    // array with all values of 3, with a quantity of 5
+    let b = [3; 5];
+    println!("print the array, not the list! {:?}", b);
+
 }
 
