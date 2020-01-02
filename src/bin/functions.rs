@@ -1,9 +1,9 @@
-fn main () {
+fn main() {
     let merf = 66; // this is a statement, it doesn't return a value
     another_function(35); // this is an expression, it DOES return a value
     println!("{}", merf); // also an expression?
-    // "Calling a function is an expression. Calling a macro is an expression"
-    // from ch03-03-how-functions-work
+                          // "Calling a function is an expression. Calling a macro is an expression"
+                          // from ch03-03-how-functions-work
     nested_expression();
 
     let z = with_return_values();
@@ -17,7 +17,7 @@ fn main () {
 // in python, no typing
 // def another_function(x):
 //     print("value of x is {}".format(x))
-fn another_function (x: i32) {
+fn another_function(x: i32) {
     println!("value of x is {}", x); // I guess this counts as return values?
 }
 
@@ -25,7 +25,7 @@ fn nested_expression() {
     let x = 5;
     let y = {
         let x = 3; // statement, just variable binding
-        x + 1  // expression, returning a value, also has no semicolon
+        x + 1 // expression, returning a value, also has no semicolon
     }; // a statement because it's assigned to a variable?
 
     println!("the value of y is {}", y);
