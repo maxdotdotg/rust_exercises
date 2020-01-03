@@ -45,5 +45,12 @@ fn main() {
 
     println!("the result of the loop is {}", result);
 
+    // while loop!
+    let mut while_counter = 3;
 
+    while while_counter != 0 { // condition
+        println!("{}!", while_counter);
+        while_counter -=1; //modify counter
+    }
+    println!("liftoff!");
 }
