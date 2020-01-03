@@ -31,4 +31,19 @@ fn main() {
     }; // statement, assigns a value to new_number
 
     println!("the value of new_number is {}", new_number);
+
+    let mut counter = 0; // counter is mutable because it'll change!
+
+    let result = loop {
+        counter +=1;
+
+        if counter == 10 {
+            break counter * 2 // return results and 
+                              // break are on the same line
+        }
+    };
+
+    println!("the result of the loop is {}", result);
+
+
 }
