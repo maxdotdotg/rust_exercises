@@ -32,6 +32,8 @@ fn main() {
 
     println!("the value of new_number is {}", new_number);
 
+
+    // regular ? loop
     let mut counter = 0; // counter is mutable because it'll change!
 
     let result = loop {
@@ -53,4 +55,22 @@ fn main() {
         while_counter -=1; //modify counter
     }
     println!("liftoff!");
+
+
+    // for loop
+    // also known as a while loop with a list
+    let my_array = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("the value at index {} is: {}",
+                 index, my_array[index]);
+        index += 1;
+    }
+
+    // alternate, iter approach?
+    for element in my_array.iter() {
+        println!("the value is: {}", element);
+    }
+
 }
