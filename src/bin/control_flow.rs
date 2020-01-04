@@ -73,4 +73,8 @@ fn main() {
         println!("the value is: {}", element);
     }
 
+    for numb in (1..4).rev() { // range done with (start .. end) not inclusive
+        println!("{}!", numb); // numb doesn't need a let statement, because it's bound and relased?
+    }
+    println!("liftoff again!");
 }
