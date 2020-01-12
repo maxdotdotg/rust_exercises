@@ -15,6 +15,7 @@ fn main() {
 
      */
     let test_string = String::from("hello, world");
+    let test_string_two = "hello again";
 
     println!("{}", first_word(&test_string));
 
@@ -23,6 +24,7 @@ fn main() {
     let total_string = &test_string[..]; // start to end
     println!("doing it by hand: '{}' and '{}'", hello, world);
     println!("a slice containing the whole thing: '{}'", total_string);
+    println!("using slices! '{}'", first_word_using_slices(&test_string_two));
     println!("using slices! '{}'", first_word_using_slices(&test_string));
 }
 
@@ -40,7 +42,9 @@ fn first_word(s: &String) -> usize {
     s.len()
 }
 
-fn first_word_using_slices(s: &String) -> &str {
+fn first_word_using_slices(s: &str) -> &str {
+    // taking borrowed str allows for both &str and &String
+    // since both can be slices
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
