@@ -24,7 +24,10 @@ fn main() {
     let total_string = &test_string[..]; // start to end
     println!("doing it by hand: '{}' and '{}'", hello, world);
     println!("a slice containing the whole thing: '{}'", total_string);
-    println!("using slices! '{}'", first_word_using_slices(&test_string_two));
+    println!(
+        "using slices! '{}'",
+        first_word_using_slices(&test_string_two)
+    );
     println!("using slices! '{}'", first_word_using_slices(&test_string));
 }
 

@@ -1,13 +1,15 @@
 fn main() {
     let number = 3;
 
-    if number < 5 
+    if number < 5
     // this is very wrong from the rustfmt perspective
     // but I think it's a helpful demo of statements vs expressions
-    { println!("first condition was true"); // statement
-    } // true arm of the if-expression, returning the statement
-    else 
-    { println!("first condition was false"); // statement
+    {
+        println!("first condition was true"); // statement
+    }
+    // true arm of the if-expression, returning the statement
+    else {
+        println!("first condition was false"); // statement
     } // false arm of the if-expression, returning the statement
 
     // else ifs yo
@@ -32,16 +34,15 @@ fn main() {
 
     println!("the value of new_number is {}", new_number);
 
-
     // regular ? loop
     let mut counter = 0; // counter is mutable because it'll change!
 
     let result = loop {
-        counter +=1;
+        counter += 1;
 
         if counter == 10 {
-            break counter * 2 // return results and 
-                              // break are on the same line
+            break counter * 2; // return results and
+                               // break are on the same line
         }
     };
 
@@ -50,12 +51,12 @@ fn main() {
     // while loop!
     let mut while_counter = 3;
 
-    while while_counter != 0 { // condition
+    while while_counter != 0 {
+        // condition
         println!("{}!", while_counter);
-        while_counter -=1; //modify counter
+        while_counter -= 1; //modify counter
     }
     println!("liftoff!");
-
 
     // for loop
     // also known as a while loop with a list
@@ -63,8 +64,7 @@ fn main() {
     let mut index = 0;
 
     while index < 5 {
-        println!("the value at index {} is: {}",
-                 index, my_array[index]);
+        println!("the value at index {} is: {}", index, my_array[index]);
         index += 1;
     }
 
@@ -73,7 +73,8 @@ fn main() {
         println!("the value is: {}", element);
     }
 
-    for numb in (1..4).rev() { // range done with (start .. end) not inclusive
+    for numb in (1..4).rev() {
+        // range done with (start .. end) not inclusive
         println!("{}!", numb); // numb doesn't need a let statement, because it's bound and relased?
     }
     println!("liftoff again!");

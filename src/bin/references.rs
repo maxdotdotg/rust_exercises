@@ -1,10 +1,10 @@
 fn main() {
     let s1 = String::from("hello");
     let len = calculate_length(&s1); // a reference to s1
-    // "These ampersands are references, and they allow you to refer 
-    // to some value without taking ownership of it"
-    // ch04-02-references-and-borrowing
-    println!("length of '{}' is {}", s1, len); 
+                                     // "These ampersands are references, and they allow you to refer
+                                     // to some value without taking ownership of it"
+                                     // ch04-02-references-and-borrowing
+    println!("length of '{}' is {}", s1, len);
 
     let mut s = String::from("hello");
     println!("value of s is '{}' before calling `change`", s);
@@ -23,7 +23,7 @@ fn calculate_length(s: &String) -> usize {
     // borrows (takes a reference to) a string
     // returns an int of type matching the os architecture?
     s.len() // returned, so no semicolon
-    // since s is a reference, it's not out of scope when the function exits
+            // since s is a reference, it's not out of scope when the function exits
 }
 
 fn change(some_string: &mut String) {
@@ -31,8 +31,8 @@ fn change(some_string: &mut String) {
     // the reference has to be mutable because we're changing the data itself
     // not using the data as-is for another operation
     // like we are for calculate_length
-    some_string.push_str(", world"); 
-    // "you can have only one mutable reference to a particular 
+    some_string.push_str(", world");
+    // "you can have only one mutable reference to a particular
     // piece of data in a particular scope."
     // ch04-02-references-and-borrowing
     // ALSO
