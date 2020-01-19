@@ -35,11 +35,42 @@ fn main() {
 
     let user3 = build_user(email3, username3);
     println!("user3 email: {}, username: {}", user3.email, user3.username);
+
+    let user4 = User {
+        email: String::from("third@third.co"),
+        username: String::from("num3"),
+        ..user1 // use the remaining values from user1
+    };
+
+    println!("user4 active? {:?}", user4.active);
+
+    // same as user4, just spelled out using values from another instance of the struct
+    let user5 = User {
+        email: String::from("someone-again@example.com"),
+        username: String::from("fiph"),
+        active: user1.active,
+        sign_in_count: user1.sign_in_count,
+    };
+
+    // tuple structs are structs without named fields
+    // I'm guessing they're used for convenience and readability
+    struct Color(i32, i32, i32);
+
+    #[derive(Debug)]
+    struct Point(i32, i32, i32);
+
+    let point_var = Point(0, 0, 0);
+    let color_var = Color(0, 0, 0);
+
+    println!("{:?}", point_var);
 }
 
 // structs are types of a sort, I think?
+// yes, they're custom data types
 // that means we can return an instance of it
 fn build_user(email: String, username: String) -> User {
+    // take an email and username to build an instance of
+    // the User type (defined in the struct block above)
     User {
         // email: email,
         // username: username,
