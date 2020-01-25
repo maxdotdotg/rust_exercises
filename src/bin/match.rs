@@ -6,18 +6,34 @@ enum Coin {
     Penny,
     Nickel, 
     Dime, 
-    Quarter,
+    Quarter(UsState), // some quarters were minted with states
+}
+
+// 50 states, abbreviated here
+#[derive(Debug)]
+enum UsState {
+    Alabama, 
+    Alaska,
+// etc etc etc
 }
 
 // we're creating a function using match, which requires all cases 
 // (in this case, kinds of Coin) to be addressed
+// match arms can include further computation, or in this case, 
+// printing a line to stdout
 // AND BE SURE TO INCLUDE THE RETURN TYPE! YOU FORGOT!
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
-        Coin::Penny => 1, 
+        Coin::Penny => { 
+            println!("lucky penny!");
+            1 // last value is returned
+        },
         Coin::Nickel => 5,
         Coin::Dime => 10,
-        Coin::Quarter => 25,
+        Coin::Quarter(state) => { 
+            println!("Quarter from {:?}", state);
+            25
+        },
     }
 }
 
@@ -27,7 +43,10 @@ fn main() {
     let first = Coin::Penny;
 
     // call value_in_cents, which matches the kind of Coin
-    // and returns an int
     println!("{}", value_in_cents(first));
+
+    let quarter = Coin::Quarter(UsState::Alaska);
+    println!("{}", value_in_cents(quarter));
+
 
 }
